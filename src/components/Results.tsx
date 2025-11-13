@@ -1,4 +1,4 @@
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './figma/ImageWithFallback.tsx';
 import { TrendingUp, Users, DollarSign, Target } from 'lucide-react';
 
 const stats = [

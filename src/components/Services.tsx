@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { Target, TrendingUp, BarChart3, Megaphone, Search, Share2, Monitor } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './figma/ImageWithFallback.tsx';
 
 const services = [
   {

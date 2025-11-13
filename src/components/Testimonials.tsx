@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Star, Quote } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './figma/ImageWithFallback.tsx';
 
 const brandLogos = [
   { src: 'https://logo.clearbit.com/hgregoire.ca', alt: 'H Gregoire' },
