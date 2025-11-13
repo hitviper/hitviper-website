@@ -2,36 +2,22 @@ import { useState } from 'react';
 import { Star, Quote } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { ImageWithFallback } from './figma/ImageWithFallback';
-import hgregoireLogo from 'figma:asset/121e0138146ba0008c9f4941603c85a2de4ab68e.png';
-import csledLogo from 'figma:asset/dc72ed1923a94fc1119d6fa4bcc99c6ad28a4f84.png';
-import martinDoaneLogo from 'figma:asset/3dc11d5b6830aed438527cd279bd75cd607f946e.png';
-import redBullLogo from 'figma:asset/48f677941b33e30bb411602e0d8894c2f9cd94e2.png';
-import indigoLogo from 'figma:asset/04d19fadd81b0359d38b68e172d57486935c5252.png';
-import johnDeereLogo from 'figma:asset/74fff067f2702a3d5485b5eba5e40ffa72f73ce6.png';
-import koonetaLogo from 'figma:asset/2a42e5366ebbc6babb127a0b931bda0c9bb09f71.png';
-import unileverLogo from 'figma:asset/3db7961e97f9c5afc2654ef04a260de331a24b63.png';
-import kimberlyClarkLogo from 'figma:asset/48efe254058de88969d2b247296bb231430a4647.png';
-import shoupLogo from 'figma:asset/963a6de9a0d4b1a22eb216898e41b88a3574ecca.png';
-import compassLogo from 'figma:asset/7576c4e553558c05d4065b9c025fb32bcd79b51f.png';
-import furnishingKnowledgeLogo from 'figma:asset/9cd65235196973e768aa2633b016906f35e48cc1.png';
-import umbracoLogo from 'figma:asset/821fa0028a076c73e5337f544e996bb49f0ba235.png';
-import westernUnionLogo from 'figma:asset/9ac45ab32c12dce9c54d6a265447107871f1dac9.png';
 
 const brandLogos = [
-  { src: hgregoireLogo, alt: 'H Gregoire' },
-  { src: csledLogo, alt: 'CSLED Contractor Source LED' },
-  { src: martinDoaneLogo, alt: 'Martin Doane Barrister Solicitor' },
-  { src: redBullLogo, alt: 'Red Bull' },
-  { src: indigoLogo, alt: 'Indigo' },
-  { src: johnDeereLogo, alt: 'John Deere' },
-  { src: koonetaLogo, alt: 'Kooneta' },
-  { src: unileverLogo, alt: 'Unilever' },
-  { src: kimberlyClarkLogo, alt: 'Kimberly-Clark' },
-  { src: shoupLogo, alt: 'SHOUP - Keeping Farms Running' },
-  { src: compassLogo, alt: 'Compass' },
-  { src: furnishingKnowledgeLogo, alt: 'Furnishing Knowledge' },
-  { src: umbracoLogo, alt: 'Umbraco' },
-  { src: westernUnionLogo, alt: 'Western Union' },
+  { src: 'https://logo.clearbit.com/hgregoire.ca', alt: 'H Gregoire' },
+  { src: 'https://via.placeholder.com/150x60/1e293b/10b981?text=CSLED', alt: 'CSLED Contractor Source LED' },
+  { src: 'https://via.placeholder.com/150x60/1e293b/10b981?text=Martin+Doane', alt: 'Martin Doane Barrister Solicitor' },
+  { src: 'https://logo.clearbit.com/redbull.com', alt: 'Red Bull' },
+  { src: 'https://logo.clearbit.com/chapters.indigo.ca', alt: 'Indigo' },
+  { src: 'https://logo.clearbit.com/deere.com', alt: 'John Deere' },
+  { src: 'https://via.placeholder.com/150x60/1e293b/10b981?text=Kooneta', alt: 'Kooneta' },
+  { src: 'https://logo.clearbit.com/unilever.com', alt: 'Unilever' },
+  { src: 'https://logo.clearbit.com/kimberly-clark.com', alt: 'Kimberly-Clark' },
+  { src: 'https://via.placeholder.com/150x60/1e293b/10b981?text=SHOUP', alt: 'SHOUP - Keeping Farms Running' },
+  { src: 'https://logo.clearbit.com/compass.com', alt: 'Compass' },
+  { src: 'https://via.placeholder.com/150x60/1e293b/10b981?text=Furnishing+Knowledge', alt: 'Furnishing Knowledge' },
+  { src: 'https://logo.clearbit.com/umbraco.com', alt: 'Umbraco' },
+  { src: 'https://logo.clearbit.com/westernunion.com', alt: 'Western Union' },
 ];
 
 const testimonials = [
@@ -80,90 +66,3 @@ export function Testimonials() {
             {brandLogos.map((logo, index) => (
               <div 
                 key={index}
-                className="w-full h-16 bg-white rounded-lg flex items-center justify-center p-2"
-              >
-                <ImageWithFallback 
-                  src={logo.src} 
-                  alt={logo.alt} 
-                  className="w-full h-full object-contain grayscale"
-                  loading="lazy"
-                />
-              </div>
-            ))}
-          </div>
-
-          {/* Desktop: Two rows */}
-          <div className="hidden md:flex flex-col gap-4 items-center">
-            {/* First Row */}
-            <div className="flex justify-center items-center gap-4">
-              {brandLogos.slice(0, 7).map((logo, index) => (
-                <div 
-                  key={index}
-                  className="w-28 h-14 bg-white rounded-lg flex items-center justify-center p-2 cursor-pointer"
-                  onMouseEnter={() => setHoveredIndex(index)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <ImageWithFallback 
-                    src={logo.src} 
-                    alt={logo.alt} 
-                    className={`w-full h-full object-contain transition-all duration-500 ${
-                      hoveredIndex === index ? 'grayscale-0' : 'grayscale'
-                    }`}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-            {/* Second Row */}
-            <div className="flex justify-center items-center gap-4">
-              {brandLogos.slice(7).map((logo, index) => (
-                <div 
-                  key={index + 7}
-                  className="w-28 h-14 bg-white rounded-lg flex items-center justify-center p-2 cursor-pointer"
-                  onMouseEnter={() => setHoveredIndex(index + 7)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <ImageWithFallback 
-                    src={logo.src} 
-                    alt={logo.alt} 
-                    className={`w-full h-full object-contain transition-all duration-500 ${
-                      hoveredIndex === index + 7 ? 'grayscale-0' : 'grayscale'
-                    }`}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <Card key={index} className="border-2 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl">
-              <CardContent className="pt-6">
-                <Quote className="text-emerald-300 mb-4" size={32} />
-                
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="text-yellow-400 fill-yellow-400" size={16} />
-                  ))}
-                </div>
-
-                <p className="text-gray-700 mb-6">
-                  "{testimonial.content}"
-                </p>
-
-                <div className="border-t border-gray-200 pt-4">
-                  <div className="text-gray-900">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600">
-                    {testimonial.role}, {testimonial.company}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}

@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { Linkedin, Twitter, Instagram } from 'lucide-react';
-import logo from 'figma:asset/31160b505b4d44116a2444dd7da50065610cdc0b.png';
 
 export const Footer = memo(function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,7 +10,7 @@ export const Footer = memo(function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="md:col-span-2">
-            <img src={logo} alt="Hitviper Inc." className="h-8 w-auto mb-4 brightness-0 invert" loading="lazy" />
+            <img src="/viper-icon.svg" alt="Hitviper Inc." className="h-8 w-auto mb-4 brightness-0 invert" loading="lazy" />
             <p className="text-gray-400 mb-4 max-w-md">
               Performance-driven digital marketing and paid media consulting that delivers measurable growth for ambitious brands.
             </p>
@@ -67,8 +66,3 @@ export const Footer = memo(function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
           <p>&copy; {currentYear} Hitviper Inc. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  );
-});

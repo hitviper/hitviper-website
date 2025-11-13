@@ -1,6 +1,5 @@
 import { ImageWithFallback } from './figma/ImageWithFallback';
 import { TrendingUp, Users, DollarSign, Target } from 'lucide-react';
-import bgImage from 'figma:asset/bcbd5a930d728d2556263b08e01937b44b165c30.png';
 
 const stats = [
   {
@@ -32,7 +31,7 @@ const stats = [
 export function Results() {
   return (
     <section id="results" className="py-20 px-4 relative text-white overflow-hidden" style={{
-      backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(${bgImage})`,
+      backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url(https://images.unsplash.com/photo-1668765688107-dfe291d7605e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx0cm9waWNhbCUyMGxlYXZlcyUyMGdyZWVuJTIwbmF0dXJlfGVufDF8fHx8MTc2MzAwNjQxNXww&ixlib=rb-4.1.0&q=80&w=1080)`,
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       backgroundRepeat: 'no-repeat'
@@ -67,14 +66,3 @@ export function Results() {
                     <Icon className="text-emerald-300 mb-4" size={32} />
                     <div className="text-4xl mb-2">{stat.value}</div>
                     <div className="text-lg mb-1">{stat.label}</div>
-                    <div className="text-sm text-slate-200">{stat.description}</div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
