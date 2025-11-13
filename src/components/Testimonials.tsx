@@ -66,3 +66,90 @@ export function Testimonials() {
             {brandLogos.map((logo, index) => (
               <div 
                 key={index}
+                className="w-full h-16 bg-white rounded-lg flex items-center justify-center p-2"
+              >
+                <ImageWithFallback 
+                  src={logo.src} 
+                  alt={logo.alt} 
+                  className="w-full h-full object-contain grayscale"
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: Two rows */}
+          <div className="hidden md:flex flex-col gap-4 items-center">
+            {/* First Row */}
+            <div className="flex justify-center items-center gap-4">
+              {brandLogos.slice(0, 7).map((logo, index) => (
+                <div 
+                  key={index}
+                  className="w-28 h-14 bg-white rounded-lg flex items-center justify-center p-2 cursor-pointer"
+                  onMouseEnter={() => setHoveredIndex(index)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <ImageWithFallback 
+                    src={logo.src} 
+                    alt={logo.alt} 
+                    className={`w-full h-full object-contain transition-all duration-500 ${
+                      hoveredIndex === index ? 'grayscale-0' : 'grayscale'
+                    }`}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+            {/* Second Row */}
+            <div className="flex justify-center items-center gap-4">
+              {brandLogos.slice(7).map((logo, index) => (
+                <div 
+                  key={index + 7}
+                  className="w-28 h-14 bg-white rounded-lg flex items-center justify-center p-2 cursor-pointer"
+                  onMouseEnter={() => setHoveredIndex(index + 7)}
+                  onMouseLeave={() => setHoveredIndex(null)}
+                >
+                  <ImageWithFallback 
+                    src={logo.src} 
+                    alt={logo.alt} 
+                    className={`w-full h-full object-contain transition-all duration-500 ${
+                      hoveredIndex === index + 7 ? 'grayscale-0' : 'grayscale'
+                    }`}
+                    loading="lazy"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <Card key={index} className="border-2 hover:border-emerald-300 transition-all duration-300 hover:shadow-xl">
+              <CardContent className="pt-6">
+                <Quote className="text-emerald-300 mb-4" size={32} />
+                
+                <div className="flex gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="text-yellow-400 fill-yellow-400" size={16} />
+                  ))}
+                </div>
+
+                <p className="text-gray-700 mb-6">
+                  "{testimonial.content}"
+                </p>
+
+                <div className="border-t border-gray-200 pt-4">
+                  <div className="text-gray-900">{testimonial.name}</div>
+                  <div className="text-sm text-gray-600">
+                    {testimonial.role}, {testimonial.company}
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

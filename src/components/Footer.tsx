@@ -66,3 +66,8 @@ export const Footer = memo(function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
           <p>&copy; {currentYear} Hitviper Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+});

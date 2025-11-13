@@ -66,3 +66,14 @@ export function Results() {
                     <Icon className="text-emerald-300 mb-4" size={32} />
                     <div className="text-4xl mb-2">{stat.value}</div>
                     <div className="text-lg mb-1">{stat.label}</div>
+                    <div className="text-sm text-slate-200">{stat.description}</div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
