@@ -66,3 +66,34 @@ export const Header = memo(function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-4">
+            <button
+              onClick={() => scrollToSection('services')}
+              className="block w-full text-left text-gray-700 hover:text-emerald-700 transition-colors"
+            >
+              Services
+            </button>
+            <button
+              onClick={() => scrollToSection('results')}
+              className="block w-full text-left text-gray-700 hover:text-emerald-700 transition-colors"
+            >
+              Results
+            </button>
+            <button
+              onClick={() => scrollToSection('testimonials')}
+              className="block w-full text-left text-gray-700 hover:text-emerald-700 transition-colors"
+            >
+              Testimonials
+            </button>
+            <Button
+              onClick={() => scrollToSection('contact')}
+              className="w-full bg-gradient-to-r from-emerald-700 to-emerald-900 hover:from-emerald-800 hover:to-emerald-950"
+            >
+              Get Started
+            </Button>
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+});
